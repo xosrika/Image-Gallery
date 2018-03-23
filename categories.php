@@ -55,22 +55,41 @@
 					padding: 10px;
 			}
 			.column.side {
-					
 					width: 10%;
 			}
 	
 			.column.middle {
 					width: 80%;
 			}
-		
-		
-
+			
+			
 			.row:after {
-					content: "";
-					display: table;
-					clear: both;
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+
+			div.gallery {
+				margin: 5px;
+				border: 1px solid #ccc;
+				float: left;
+				width: 180px;
 			}
 
+			div.gallery:hover {
+				border: 1px solid #777;
+			}
+
+			div.gallery img {
+				width: 100%;
+				height: auto;
+			}
+
+			div.desc {
+				padding: 15px;
+				text-align: center;
+			}
 
 		</style>
     <meta charset="utf-8">
@@ -84,7 +103,7 @@
 		<dev class="navbar">
 			<ul>
 				<li><a class="leftBar active" href="index.php">Home Page</a></li>
-				<li><a class="leftBar" href="categories.php">Categories</a></li>
+				<li><a class="leftBar" href="index.php">Categories</a></li>
 				<li><a class="rightBar" href="index.php">Log In</a></li>
 				<li><a class="rightBar" href="index.php">Sign Up</a></li>
 			</ul>
@@ -97,11 +116,35 @@
 			<p></p>
 		</div>
 		<div class="column middle">
-			<h1>Home Page</h1>
-			<h2>Description:</h2>
-			<p>
-				This is Image Gallery website. Here you can see all kind of photos divided into categories. 
-			</p>
+			<h1>Categories</h1>
+		
+			<div class="gallery">
+			<a target="_blank" href="winter.jpg">
+				<img src="winter.jpg" alt="Trolltunga Norway" width="300" height="200">
+			</a>
+			<div class="desc">Add a description of the image here</div>
+			</div>
+
+			<div class="gallery">
+			<a target="_blank" href="winter.jpg">
+				<img src="winter.jpg" alt="Forest" width="600" height="400">
+			</a>
+			<div class="desc">Add a description of the image here</div>
+			</div>
+
+			<div class="gallery">
+			<a target="_blank" href="winter.jpg">
+				<img src="winter.jpg" alt="Northern Lights" width="600" height="400">
+			</a>
+			<div class="desc">Add a description of the image here</div>
+			</div>
+
+			<div class="gallery">
+			<a target="_blank" href="winter.jpg">
+				<img src="winter.jpg" alt="Mountains" width="600" height="400">
+			</a>
+			<div class="desc">Add a description of the image here</div>
+			</div>
 		</div>
 		<div class="column side">
 			<h2>Side</h2>
