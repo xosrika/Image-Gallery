@@ -1,0 +1,26 @@
+{
+  "name": "image-gallery",
+  "version": "1.0.0",
+  "description": "Image gallery website.",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xosrika/Image-Gallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xosrika/Image-Gallery/issues"
+  },
+  "homepage": "https://github.com/xosrika/Image-Gallery#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1"
+  },
+  "dependencies": {}
+}
