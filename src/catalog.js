@@ -45,7 +45,7 @@ function leftOneStep(elem) {
 
 	  if (timePassed > 1000) clearInterval(timer);
 
-	}, 30);
+	}, 29);
   }
 
  function rightOneStep(elem) {
@@ -64,7 +64,7 @@ function leftOneStep(elem) {
 
 	  if (timePassed > 1000) clearInterval(timer);
 
-	}, 30);
+	}, 29);
   }
 
 

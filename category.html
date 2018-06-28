@@ -1,24 +1,41 @@
 <html>
 
-<head>
- 
-	<link   type="text/css" href="catalog.css"  rel="stylesheet" >	
-	<script type="text/javascript" src="src/catalog.js"         ></script>
+	<head>
 	
- 
-</head>
-
-<body onload="pageLoaded();">
+		<link type="text/css" href="catalog.css"  rel="stylesheet" >
+		<link rel="stylesheet" href="styles.css">	
+		
+		
 	
-	<div id="catalogHolder" class="catalogHolder" >
-		<div id="catalog"  class="catalog">
-		</div>
-		<div id="btnLeft"  class="catalogBtn left"  onclick="moveCatalogLeft();"   >
-		</div>
-		<div id="btnRight" class="catalogBtn right" onclick="moveCatalogRight();"  >
-		</div>		
-	</div>
+	</head>
 
-</body>
+	<body onload="pageLoaded();">
+		
+		<dev class="navbar">
+			<ul>
+				<li><a class="leftBar" href="index.php">Home Page</a></li>
+				<li><a class="leftBar" href="categories.php">Categories</a></li>
+				<li><a class="rightBar" href="index.php">Log In</a></li>
+				<li><a class="rightBar" href="index.php">Sign Up</a></li>
+			</ul>
+		</dev>
+
+		<div class="content group">
+
+			<h1 class="categoryName">Winter</h1>			
+
+			<div id="catalogHolder" class="catalogHolder group" >
+				<div id="catalog"  class="catalog">
+				</div>
+				<div id="btnLeft"  class="catalogBtn left"  onclick="moveCatalogLeft();"   >
+				</div>
+				<div id="btnRight" class="catalogBtn right" onclick="moveCatalogRight();"  >
+				</div>		
+			</div>
+		</div>
+
+	</body>
+
+<script type="text/javascript" src="src/catalog.js"         ></script>
 
 </html>

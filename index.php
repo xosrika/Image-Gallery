@@ -13,7 +13,7 @@
 		
 	<dev class="navbar">
 		<ul>
-			<li><a class="leftBar active" href="index.php">Home Page</a></li>
+			<li><a class="leftBar" href="index.php">Home Page</a></li>
 			<li><a class="leftBar" href="categories.php">Categories</a></li>
 			<li><a class="rightBar" href="index.php">Log In</a></li>
 			<li><a class="rightBar" href="index.php">Sign Up</a></li>
