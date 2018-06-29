@@ -1,27 +1,31 @@
   
-  
- var imageCatalog = [ "../images/winter/winter1.jpg", "../images/winter/winter2.jpg", "../images/winter/winter3.jpg", "../images/winter/winter4.jpg", "../images/winter/winter5.jpg", "../images/winter/winter6.jpg", "../images/winter/winter7.jpg", "../images/winter/winter8.jpg" ];
-  
-  
- function pageLoaded(){
-	 displayCatalog();
+    
+ var lenOfImageCatalog;
+ var slidesMovedCount = 1; 
+
+ function pageLoaded(imageCatalog){
+	 
+	 let elem = document.getElementsByClassName("content")[0];
+	 elem.innerHTML = catalogTemplate();    
+	 slidesMovedCount = 1;
+	 displayCatalog(imageCatalog);
  }
  
  
- function displayCatalog(){
-	 var catalog = document.getElementById("catalog");
+ function displayCatalog(imageCatalog){
+	 lenOfImageCatalog = imageCatalog.length;  
+	 let catalog = document.getElementById("catalog");
 	 catalog.innerHTML="";
 	 
 	 for(var i=0; i<imageCatalog.length; i++){
-		 var style = 'left:'+(i+i*33) + '%; background-image: url(\'images/'+imageCatalog[i]+'\');';
+		 let style = `left:${(i+i*33)}%; background-image: url(\'images/${imageCatalog[i]}\');`;
 		 catalog.innerHTML += getImageDiv(style);
 	 } 
  }
  
  
  function getImageDiv(style){
-	 var result = '<div class="catalogImageEntry" style="'+style+'">';
-		'</div>';
+	 let result = `<div class="catalogImageEntry" style="${style}"></div>`;
 	 return result;
  }
  
@@ -45,7 +49,7 @@ function leftOneStep(elem) {
 
 	  if (timePassed > 1000) clearInterval(timer);
 
-	}, 29);
+	}, 30);
   }
 
  function rightOneStep(elem) {
@@ -64,12 +68,12 @@ function leftOneStep(elem) {
 
 	  if (timePassed > 1000) clearInterval(timer);
 
-	}, 29);
+	}, 30);
   }
 
 
 function moveCatalogLeft(){	  
-	if(Math.abs(slidesMovedCount) == imageCatalog.length-3){
+	if(Math.abs(slidesMovedCount) == lenOfImageCatalog-3){
 		return;
 	}
 	

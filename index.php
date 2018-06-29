@@ -2,7 +2,8 @@
 
 <html lang="en-US">
   <head>
-    <link rel="stylesheet" href="styles.css">	
+		<link rel="stylesheet" href="styles.css">	
+		<link type="text/css" href="catalog.css"  rel="stylesheet" >
     <meta charset="utf-8">
 		<meta name="author" content="Chris Mills">
 		<meta name="description" content="This is the home page of image gallery site. 
@@ -40,9 +41,12 @@
 
 	
 	<script src="https://unpkg.com/navigo@6.0.2/lib/navigo.min.js"></script>
+	<script src="src/data/catalog_images.js"></script>
 	<script src="src/templates/categories.js"></script>
-	<script src="src/templates/category.js"></script> 
-	<script src="src/templates/home.js"></script>  
+	<script src="src/templates/category.js"></script>
+	<script src="src/templates/catalog.js"></script> 
+	<script src="src/templates/home.js"></script> 
+	<script src="src/catalog_act.js"></script>
 	<script src="src/router.js"></script>  
 	</body>
 		
