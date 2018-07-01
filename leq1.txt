@@ -1,0 +1,70 @@
+
+class DataRegistry {
+    data = {}
+    get(key) {
+        return this.data[key];
+    }
+    set(key, value) {
+        this.data[key] = value;
+    }
+}
+
+let registry = new DataRegistry();
+
+class Photo {
+    source = ''
+    id = ''
+}
+
+class Gallery {
+    photos = []
+}
+
+class Careousel {
+    photos = []
+    leftdiff = 123
+}
+
+// GET /gallery/123
+{
+    "success": true,
+    "result": [
+        {
+            "id": 123,
+            "url: "http://rame.com/123.jpg"
+        },
+        {
+            "id": 123,
+            "url: "http://rame.com/123.jpg"
+        },
+        {
+            "id": 123,
+            "url: "http://rame.com/123.jpg"
+        },
+    ]
+}
+
+
+functino getGallery(id, callback) {
+    ajax('GET', '/gallery/123.json', function(response){
+        let photos = [];
+        for (let item in response.result) {
+            photos.push(new Photo(item));
+        }
+        let gallery = new Gallery(photos);
+        registry.set('gallery_' + 123, gallery);
+    if (typeof callback == 'function') {
+        callback.call(null);
+    }
+    });
+
+
+}
+
+
+
+router.on('/gallery/:id', function(id){
+    getGallery(id, function() {
+        registry.get('gallery_' + id);
+    });
+});

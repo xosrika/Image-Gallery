@@ -37,7 +37,13 @@ router
         let cat = document.getElementsByClassName("column middle")[0];
         cat.innerHTML += categoryTemplate(json);
       }
-    }    
+    },
+    
+    'image/../images/:category/:source' : function (params){
+      let elem = document.getElementsByClassName("content")[0];
+	    elem.innerHTML = imageTemplate(params.category, params.source);    
+    },
+
     
     // '*':function(){
     //   alert("not good");

@@ -17,15 +17,15 @@
 	 let catalog = document.getElementById("catalog");
 	 catalog.innerHTML="";
 	 
-	 for(var i=0; i<imageCatalog.length; i++){
+	 for(let i=0; i<imageCatalog.length; i++){
 		 let style = `left:${(i+i*33)}%; background-image: url(\'images/${imageCatalog[i]}\');`;
-		 catalog.innerHTML += getImageDiv(style);
+		 catalog.innerHTML += getImageDiv(style, imageCatalog[i]);
 	 } 
  }
  
  
- function getImageDiv(style){
-	 let result = `<div class="catalogImageEntry" style="${style}"></div>`;
+ function getImageDiv(style, link){
+	 let result = `<a href="#image/${link}"> <div class="catalogImageEntry" style="${style}"></div></a>`;
 	 return result;
  }
  

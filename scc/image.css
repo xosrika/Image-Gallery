@@ -1,0 +1,13 @@
+.singleImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.categoryNameForSingleImage{
+    height: 60px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 40px;
+}
