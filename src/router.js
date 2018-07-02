@@ -17,8 +17,11 @@ router
 
     'categories/:id/' : function (params) {
       
-      let imageCatalog = AllCatalogImages[params.id];
-      pageLoaded(imageCatalog);
+      let listOfPhotos = AllCatalogImages[params.id];
+      let galery = new Gallery(listOfPhotos);
+      currentCatalog = new Catalog(galery);
+
+      currentCatalog.loadCatalog();
 
     },
 

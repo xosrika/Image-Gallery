@@ -1,0 +1,28 @@
+{
+    "votes":[
+
+        {"image": "images/winter/winter1.jpg", "user": "giorgi", "vote": 1},
+        {"image": "images/winter/winter1.jpg", "user": "vinme", "vote": 1},
+        {"image": "images/winter/winter1.jpg", "user": "123", "vote": 1},
+        {"image": "images/winter/winter1.jpg", "user": "sxva", "vote": 1},
+        {"image": "images/winter/winter1.jpg", "user": "kaci", "vote": 1},
+        {"image": "images/winter/winter1.jpg", "user": "an", "vote": 1},
+        {"image": "images/winter/winter2.jpg", "user": "qali", "vote": 1},
+        {"image": "images/winter/winter2.jpg", "user": "sheizleba", "vote": 1},
+        {"image": "images/winter/winter3.jpg", "user": "bafshvic", "vote": 1},
+        {"image": "images/winter/winter4.jpg", "user": "magram", "vote": 1},
+        {"image": "images/winter/winter4.jpg", "user": "ara", "vote": 1},
+        {"image": "images/winter/winter4.jpg", "user": "boti", "vote": 1},
+        {"image": "images/winter/winter5.jpg", "user": "jer", "vote": 1},
+        {"image": "images/winter/winter7.jpg", "user": "boti", "vote": 1},
+        {"image": "images/winter/winter6.jpg", "user": "giorgi", "vote": 1},
+        {"image": "images/winter/winter1.jpg", "user": "adrea", "vote": -1},
+        {"image": "images/winter/winter2.jpg", "user": "cotac", "vote": -1},
+        {"image": "images/winter/winter8.jpg", "user": "da", "vote": -1},
+        {"image": "images/winter/winter6.jpg", "user": "shevavseb", "vote": -1},
+        {"image": "images/winter/winter8.jpg", "user": "male", "vote": -1},
+        {"image": "images/winter/winter8.jpg", "user": "egaa", "vote": -1}
+
+
+    ]
+}

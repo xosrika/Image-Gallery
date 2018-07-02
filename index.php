@@ -52,17 +52,17 @@
 				
 				<hr>
 				<label for="email"><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" name="username" required>
+				<input type="text" placeholder="Enter Username" name="username" id="signupUsr" required>
 
 				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" required>
+				<input type="password" placeholder="Enter Password" name="psw" id="signupPsw" required>
 
 				<label for="psw-repeat"><b>Repeat Password</b></label>
-				<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+				<input type="password" placeholder="Repeat Password" name="psw-repeat" id="signupRepPsw" required>
 				
 				<div class="clearfix">
 					<button type="button" class="cancelbtn" id="cancelSignUp">Cancel</button>
-					<button type="button" class="signupbtn" id="submitSigbnUp">Sign Up</button>
+					<button type="button" class="signupbtn" id="submitSignUp">Sign Up</button>
 				</div>
 			</div>
 		</form>
@@ -76,10 +76,10 @@
 				
 				<hr>
 				<label for="email"><b>Username</b></label>
-				<input type="text" placeholder="Enter Username" name="username" required>
+				<input type="text" placeholder="Enter Username" name="username" id="loginUsr" required>
 
 				<label for="psw"><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="psw" required>
+				<input type="password" placeholder="Enter Password" name="psw" id="loginPsw" required>
 				
 				<div class="clearfix">
 					<button type="button" class="cancelbtn" id="cancelLogIn">Cancel</button>
@@ -100,10 +100,14 @@
 	<script src="src/templates/categories.js"></script>
 	<script src="src/templates/category.js"></script>
 	<script src="src/templates/catalog.js"></script>
+	<script src="src/classes/catalog.js"></script>
+	<script src="src/classes/gallery.js"></script>
 	<script src="src/templates/image.js"></script>  
 	<script src="src/templates/home.js"></script>
+
+
 	<script src="src/doc_listeners.js"></script> 
-	<script src="src/catalog_act.js"></script>
+	
 	<script src="src/router.js"></script>  
 	</body>
 		

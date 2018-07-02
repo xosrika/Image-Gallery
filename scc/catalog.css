@@ -17,11 +17,11 @@
 }
 .catalogBtn.left{
 	left: 1% ;
-	background-image: url('images/arrow_left.png');
+	background-image: url('../images/arrow_left.png');
 }
 .catalogBtn.right{
 	right: 1%;
-	background-image: url('images/arrow_right.png');
+	background-image: url('../images/arrow_right.png');
 }
 .catalog{
 	position : absolute ;

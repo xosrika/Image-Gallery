@@ -1,0 +1,104 @@
+class Catalog{
+  
+  constructor(galery){
+    this.galery = galery;
+    this.leftdiff = 1;
+    this.elem = null;
+    
+  }
+
+
+  loadCatalog(){	 
+    let content = document.getElementsByClassName("content")[0];
+    content.innerHTML = catalogTemplate();    
+    this.elem = document.getElementById("catalog");
+    
+    this.displayCatalog();
+  }
+
+
+  displayCatalog(){
+    let len = this.galery.getLengthOfGallery();  
+    
+    this.elem.innerHTML = "";  
+    
+    this.elem = document.getElementById("catalog");
+    
+    for(let i=0; i<len; i++){
+      let style = `left:${(i+i*33)}%; background-image: url(\'images/${this.galery.getGalleryImages()[i]}\');`;
+      this.elem.innerHTML += this.getImageDiv(style, this.galery.getGalleryImages()[i]);
+    } 
+  }
+  
+  
+  getImageDiv(style, link){
+    let result = `<a href="#image/${link}"> <div class="catalogImageEntry" style="${style}"></div></a>`;
+    return result;
+  }
+
+  
+
+  leftOneStep() {
+    let start = Date.now();
+    let elem = this.elem;
+    let timer = setInterval(function() {
+      let timePassed = Date.now() - start;
+  
+      let old =  parseInt(elem.style.left, 10);
+  
+      if(isNaN(old)){
+        old = 0;
+      }		
+      elem.style.left = old - 1 + "%";
+  
+      if (timePassed > 1000) clearInterval(timer);
+  
+    }, 30);
+  }
+  
+   rightOneStep() {
+ 
+    let start = Date.now();
+    let elem = this.elem;
+    let timer = setInterval(function() {
+      let timePassed = Date.now() - start;
+  
+      let old =  parseInt(elem.style.left, 10);
+  
+      if(isNaN(old)){
+        old = 0;
+      }		
+      elem.style.left = old + 1 + "%";
+  
+      if (timePassed > 1000) clearInterval(timer);
+  
+    }, 30);
+  }
+
+
+
+
+
+
+  moveCatalogLeft(){	  
+    if(Math.abs(this.leftdiff) == this.galery.getLengthOfGallery()-3){
+      return;
+    }
+    this.leftOneStep();
+    this.leftdiff--;
+  }
+
+  moveCatalogRight(){
+	
+    if(this.leftdiff == 2){
+      return;
+    }	
+   
+    this.rightOneStep();
+    this.leftdiff++;
+  }
+
+}
+
+
+let currentCatalog = null;
