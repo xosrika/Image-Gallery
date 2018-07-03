@@ -3,19 +3,35 @@ document.addEventListener("click", function(event){
 
   if(event.target.id == "cancelSignUp"){
     document.getElementById('signupform').style.display='none';
+    
   }
 
   if(event.target.id == "submitSignUp"){
-    console.log("HEREEEE");
-    mostedLikedImages(function(){
-      console.log(itemsLiked);
-      console.log(itemsNotLiked);
-    });
+    let userName = document.getElementById("signupUsr").value;
+    let userPassword = document.getElementById("signupPsw").value;
+    let userRepPassword = document.getElementById("signupRepPsw").value;
+
+
+    if(userPassword == userRepPassword){
+      signupUser(userName, function(){
+        if(currentUser == null){
+          document.getElementById("signuptext").innerHTML = "<b>This user exists!</b>";
+        }else{
+          document.getElementById('signupform').style.display='none';
+          changeNavbar(true);
+        } 
+      });
+    } else{
+      document.getElementById("signuptext").innerHTML = "<b>Passwords does not match!</b>";
+    }
+
   }
 
   if(event.target.id == "signUpShower"){
     document.getElementById('loginform').style.display='none';
     document.getElementById('signupform').style.display='block';
+    document.getElementById("signuptext").innerHTML = "<b></b>";
+
   }
 
   if(event.target.id == "cancelLogIn"){
@@ -30,7 +46,15 @@ document.addEventListener("click", function(event){
 
     let foundElem = false;
 
-    foundElem = loginUser(userName, userPassword);
+    foundElem = loginUser(userName, userPassword, function(){
+      if(currentUser == null){
+        document.getElementById("logintext").innerHTML = "<b>Wrong username or password!</b>";
+      }else{
+        document.getElementById('loginform').style.display='none';
+        changeNavbar(true);
+      }
+
+    });
 
 
 
@@ -39,6 +63,13 @@ document.addEventListener("click", function(event){
   if(event.target.id == "logInShower"){
     document.getElementById('signupform').style.display='none';
     document.getElementById('loginform').style.display='block';
+    document.getElementById("logintext").innerHTML = "<b></b>";
+
+  }
+
+  if(event.target.id == "logout"){
+    currentUser = null;
+    changeNavbar(false);
   }
 
 
@@ -53,24 +84,31 @@ document.addEventListener("click", function(event){
   
 });
 
-
-function loginUser(userName, userPassword) {
+function signupUser(userName, callback) {
   fetch('data/users.json')
       .then(
         function(response0) {
             response0
               .json()
               .then(function(response) {
-                
+                let found = false; 
                 response.data.forEach(function(item){
                   
-                  if(item.username == userName && item.password == userPassword){
-                    console.log("found");
-                    return true;       
-                    
+                  if(item.username == userName){
+                    found = true;       
+                    currentUser = null;
+                    if (typeof callback == 'function') {
+                      callback.call(null);
+                    }
+                    return;
                   }
                 })
-               return false;
+                if(found == false){
+                  currentUser = new User(userName);
+                  if (typeof callback == 'function') {
+                    callback.call(null);
+                  }
+                }
               });
         }
       )
@@ -125,7 +163,6 @@ function mostedLikedImages(callback){
       
 }
 
-
 function returnSortedDict(dict){
   // Create items array
   var items = Object.keys(dict).map(function(key) {
@@ -142,3 +179,60 @@ function returnSortedDict(dict){
 
 let itemsLiked;
 let itemsNotLiked;
+
+
+function loginUser(userName, userPassword, callback){
+  fetch('data/users.json')
+      .then(
+        function(response0) {
+            response0
+              .json()
+              .then(function(response) {
+                let found = false;
+                response.data.forEach(function(item){
+                  
+                  if(item.username == userName && item.password == userPassword){
+                    console.log("found");
+                    currentUser = new User(userName);
+                    
+                    if (typeof callback == 'function') {
+                      callback.call(null);
+                    }
+                    found = true
+                    return;
+                    
+                  }
+                }
+                
+              )
+              if(found == false){
+                currentUser = null;
+
+                if (typeof callback == 'function') {
+                  callback.call(null);
+                }
+              }
+               
+
+              });
+        }
+      )
+      .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+      });
+}
+
+
+
+function changeNavbar(userIsSet){
+  if(userIsSet){
+    document.getElementById('logout').style.display='block';
+    document.getElementById('signUpShower').style.display='none';
+    document.getElementById('logInShower').style.display='none';
+  } else{
+    document.getElementById('logout').style.display='none';
+    document.getElementById('signUpShower').style.display='block';
+    document.getElementById('logInShower').style.display='block';
+  }
+
+}

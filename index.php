@@ -22,6 +22,7 @@
 			<li><a class="leftBar" href="#categories">Categories</a></li>
 			<li><a class="rightBar" id="logInShower">Log In</a></li>
 			<li><a class="rightBar" id="signUpShower">Sign Up</a></li>
+			<li><a class="rightBar logout" id="logout">Log Out</a></li>
 		</ul>
 	</dev>
 	
@@ -64,6 +65,7 @@
 					<button type="button" class="cancelbtn" id="cancelSignUp">Cancel</button>
 					<button type="button" class="signupbtn" id="submitSignUp">Sign Up</button>
 				</div>
+				<label class="container_msg" id="signuptext"><b></b></label>
 			</div>
 		</form>
 	</div>
@@ -85,6 +87,7 @@
 					<button type="button" class="cancelbtn" id="cancelLogIn">Cancel</button>
 					<button type="button" class="signupbtn" id="submitLogIn">Log In</button>
 				</div>
+				<label class="container_msg" id="logintext"><b></b></label>
 			</div>
 		</form>
 	</div>
@@ -97,13 +100,16 @@
 	
 	<script src="https://unpkg.com/navigo@6.0.2/lib/navigo.min.js"></script>
 	<script src="src/data/catalog_images.js"></script>
+
 	<script src="src/templates/categories.js"></script>
 	<script src="src/templates/category.js"></script>
 	<script src="src/templates/catalog.js"></script>
-	<script src="src/classes/catalog.js"></script>
-	<script src="src/classes/gallery.js"></script>
 	<script src="src/templates/image.js"></script>  
 	<script src="src/templates/home.js"></script>
+
+	<script src="src/classes/catalog.js"></script>
+	<script src="src/classes/gallery.js"></script>
+	<script src="src/classes/user.js"></script>
 
 
 	<script src="src/doc_listeners.js"></script> 

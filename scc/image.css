@@ -9,5 +9,40 @@
     height: 60px;
 	line-height: 80px;
 	text-align: center;
-	font-size: 40px;
+    font-size: 40px;
+    text-transform: capitalize;
+
+}
+
+#actions{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+#actions img{
+    /* float: left; */
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    width: 100px;
+    height: 100px;
+
+}
+
+
+
+#actions .left {
+    float:left;
+    margin-left: 18%;
+}
+#actions .right {
+    float:right;
+    margin-right:18%;
+}
+#actions .center {
+    text-align: center;
+    margin: 0 15%;
 }
