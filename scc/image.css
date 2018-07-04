@@ -46,3 +46,9 @@
     text-align: center;
     margin: 0 15%;
 }
+
+#voteText{
+	text-align: center;
+    font-size: 30px;
+    text-transform: capitalize;
+}

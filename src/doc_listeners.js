@@ -1,12 +1,14 @@
 document.addEventListener("click", function(event){
-  
 
-  if(event.target.id == "cancelSignUp"){
+  
+  let targetId = event.target.id;
+
+  if(targetId == "cancelSignUp"){
     document.getElementById('signupform').style.display='none';
     
   }
 
-  if(event.target.id == "submitSignUp"){
+  if(targetId == "submitSignUp"){
     let userName = document.getElementById("signupUsr").value;
     let userPassword = document.getElementById("signupPsw").value;
     let userRepPassword = document.getElementById("signupRepPsw").value;
@@ -27,19 +29,19 @@ document.addEventListener("click", function(event){
 
   }
 
-  if(event.target.id == "signUpShower"){
+  if(targetId == "signUpShower"){
     document.getElementById('loginform').style.display='none';
     document.getElementById('signupform').style.display='block';
     document.getElementById("signuptext").innerHTML = "<b></b>";
 
   }
 
-  if(event.target.id == "cancelLogIn"){
+  if(targetId == "cancelLogIn"){
     document.getElementById('loginform').style.display='none';
     
   }
 
-  if(event.target.id == "submitLogIn"){
+  if(targetId == "submitLogIn"){
 
     let userName = document.getElementById("loginUsr").value;
     let userPassword = document.getElementById("loginPsw").value;
@@ -60,25 +62,58 @@ document.addEventListener("click", function(event){
 
   }
 
-  if(event.target.id == "logInShower"){
+  if(targetId == "logInShower"){
     document.getElementById('signupform').style.display='none';
     document.getElementById('loginform').style.display='block';
     document.getElementById("logintext").innerHTML = "<b></b>";
 
   }
 
-  if(event.target.id == "logout"){
+  if(targetId == "logout"){
     currentUser = null;
     changeNavbar(false);
   }
 
 
-  if(event.target.id == "btnLeft"){  
+  if(targetId == "btnLeft"){  
     currentCatalog.moveCatalogLeft();
   }
 
-  if(event.target.id == "btnRight"){
+  if(targetId == "btnRight"){
     currentCatalog.moveCatalogRight();
+  }
+
+
+  if(targetId == "nextImage"){
+    currentCatalog.goToNextImagePage();
+  }
+
+  if(targetId == "dislikeImage"){
+    if(currentUser == null){
+      document.getElementById('signupform').style.display='none';
+      document.getElementById('loginform').style.display='block';
+      document.getElementById("logintext").innerHTML = "<b></b>";
+    } else{
+
+      let bla = (document.getElementById("mainPicture"));
+      let image = (bla.src).substring(31);
+      currentUser.addVote(image, -1);
+      currentCatalog.goToNextImagePage();
+    }
+  }
+
+  if(targetId == "likeImage"){
+    if(currentUser == null){
+      document.getElementById('signupform').style.display='none';
+      document.getElementById('loginform').style.display='block';
+      document.getElementById("logintext").innerHTML = "<b></b>";
+    } else{
+      let bla = (document.getElementById("mainPicture"));
+      let image = (bla.src).substring(31);
+      currentUser.addVote(image, 1);
+      currentCatalog.goToNextImagePage();
+    }
+
   }
 
   
@@ -195,9 +230,13 @@ function loginUser(userName, userPassword, callback){
                     console.log("found");
                     currentUser = new User(userName);
                     
-                    if (typeof callback == 'function') {
-                      callback.call(null);
-                    }
+                    fillCurrentUserVotes(callback);
+
+                    // if (typeof callback == 'function') {
+                    //   callback.call(null);
+                    // }
+
+                    console.log(currentUser);
                     found = true
                     return;
                     
@@ -213,6 +252,34 @@ function loginUser(userName, userPassword, callback){
                 }
               }
                
+
+              });
+        }
+      )
+      .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+      });
+}
+
+function fillCurrentUserVotes(callback){
+  fetch('data/votes.json')
+      .then(
+        function(response0) {
+            response0
+              .json()
+              .then(function(response) {
+                response.votes.forEach(function(item){
+                  if( item.user == currentUser.username ){
+                     currentUser.votes[item.image] = item.vote;
+                  } 
+                 
+                }
+                
+              )
+              
+              if (typeof callback == 'function') {
+                callback.call(null);
+              }
 
               });
         }

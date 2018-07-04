@@ -42,8 +42,9 @@ router
       }
     },
     
-    'image/../images/:category/:source' : function (params){
+    'image/../images/:category/:source/:id' : function (params){
       let elem = document.getElementsByClassName("content")[0];
+      currentCatalog.currentPicture = parseInt(params.id);
 	    elem.innerHTML = imageTemplate(params.category, params.source);    
     },
 

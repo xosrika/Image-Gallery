@@ -4,6 +4,7 @@ class Catalog{
     this.galery = galery;
     this.leftdiff = 1;
     this.elem = null;
+    this.currentPicture = null;
     
   }
 
@@ -26,13 +27,13 @@ class Catalog{
     
     for(let i=0; i<len; i++){
       let style = `left:${(i+i*33)}%; background-image: url(\'images/${this.galery.getGalleryImages()[i]}\');`;
-      this.elem.innerHTML += this.getImageDiv(style, this.galery.getGalleryImages()[i]);
+      this.elem.innerHTML += this.getImageDiv(style, this.galery.getGalleryImages()[i], i);
     } 
   }
   
   
-  getImageDiv(style, link){
-    let result = `<a href="#image/${link}"> <div class="catalogImageEntry" style="${style}"></div></a>`;
+  getImageDiv(style, link, index){
+    let result = `<a href="#image/${link}/${index}"> <div class="catalogImageEntry" style="${style}"></div></a>`;
     return result;
   }
 
@@ -74,12 +75,6 @@ class Catalog{
   
     }, 30);
   }
-
-
-
-
-
-
   moveCatalogLeft(){	  
     if(Math.abs(this.leftdiff) == this.galery.getLengthOfGallery()-3){
       return;
@@ -97,6 +92,15 @@ class Catalog{
     this.rightOneStep();
     this.leftdiff++;
   }
+
+
+  goToNextImagePage(){
+    this.currentPicture++;
+    if(this.currentPicture != this.galery.getGalleryImages().length)
+      window.location.href = `http://localhost/Image-Gallery/index.php#image/${this.galery.getGalleryImages()[this.currentPicture]}/${this.currentPicture}>`;
+    else
+      window.location.href = "http://localhost/Image-Gallery/index.php#categories";  
+  } 
 
 }
 
