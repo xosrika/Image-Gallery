@@ -17,11 +17,13 @@ router
 
     'categories/:id/' : function (params) {
       
-      let listOfPhotos = AllCatalogImages[params.id];
-      let galery = new Gallery(listOfPhotos);
-      currentCatalog = new Catalog(galery);
+      getGallery(params.id,  function(){
+     
+        currentCatalog = new Catalog(currentGalery, allCategories.getCategory(params.id).title);
+        currentCatalog.loadCatalog();
+      })
 
-      currentCatalog.loadCatalog();
+      
 
     },
 
@@ -29,35 +31,71 @@ router
       // alert("categories")
       let elem = document.getElementsByClassName("content")[0];
       elem.innerHTML = categoriesPageTemplate(); 
-    
-      var json = {
+      
 
-        "image" : "images/winter.jpg",
-        "title" : "Winter Pictures",
-        "id" : 0
-      }
-      for(let i =0; i<8; i++){
+      getCategories(function(){
         let cat = document.getElementsByClassName("column middle")[0];
-        cat.innerHTML += categoryTemplate(json);
-      }
+
+        for(let i =0; i<allCategories.getLength(); i++){
+          cat.innerHTML += categoryTemplate(allCategories.getCategory(i));
+        }
+      })
+
+     
     },
     
     'image/../images/:category/:source/:id' : function (params){
       let elem = document.getElementsByClassName("content")[0];
       currentCatalog.currentPicture = parseInt(params.id);
 	    elem.innerHTML = imageTemplate(params.category, params.source);    
-    },
-
-    
-    // '*':function(){
-    //   alert("not good");
-      
-    //   // var elem = document.getElementsByTagName("h1")[0];
-    //   // elem.style.color = "blue"; 
-    // }
+    },    
+   
   })
   .resolve();
 
   router.notFound(function () {
     console.log("Not found");
   });
+
+
+
+  function getCategories(callback){
+    fetch('data/categories.json')
+        .then(
+          function(response0) {
+              response0
+                .json()
+                .then(function(response) {               
+
+                  allCategories = new AllCategories(response.categories);
+                
+                
+                  if (typeof callback == 'function') {
+                    callback.call(null);
+                  }
+  
+                });
+          }
+        )
+        .catch(function(err) {
+          console.log('Fetch Error :-S', err);
+        });
+  }
+
+class AllCategories {
+    
+    constructor(categoryArray) {
+      this.data = categoryArray;
+    }
+    
+    getLength(){
+      return this.data.length;
+    }
+
+    getCategory(index){
+      return this.data[index];
+    }
+}
+
+
+let allCategories = null;

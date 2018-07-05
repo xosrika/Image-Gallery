@@ -1,0 +1,84 @@
+{
+    "category_images":[
+
+         [  "../images/winter/winter1.jpg", 
+            "../images/winter/winter2.jpg", 
+            "../images/winter/winter3.jpg", 
+            "../images/winter/winter4.jpg", 
+            "../images/winter/winter5.jpg", 
+            "../images/winter/winter6.jpg", 
+            "../images/winter/winter7.jpg", 
+            "../images/winter/winter8.jpg"],
+
+
+         [  "../images/spring/spring1.jpg", 
+            "../images/spring/spring2.jpg", 
+            "../images/spring/spring3.jpg", 
+            "../images/spring/spring4.jpg", 
+            "../images/spring/spring5.jpg", 
+            "../images/spring/spring6.jpg", 
+            "../images/spring/spring7.jpg", 
+            "../images/spring/spring8.jpg"],
+
+
+         [  "../images/summer/summer1.jpg", 
+            "../images/summer/summer2.jpg", 
+            "../images/summer/summer3.jpg", 
+            "../images/summer/summer4.jpg", 
+            "../images/summer/summer5.jpg", 
+            "../images/summer/summer6.jpg", 
+            "../images/summer/summer7.jpg", 
+            "../images/summer/summer8.jpg"],   
+            
+            
+        [  "../images/autumn/autumn1.jpg", 
+            "../images/autumn/autumn2.jpg", 
+            "../images/autumn/autumn3.jpg", 
+            "../images/autumn/autumn4.jpg", 
+            "../images/autumn/autumn5.jpg", 
+            "../images/autumn/autumn6.jpg", 
+            "../images/autumn/autumn7.jpg", 
+            "../images/autumn/autumn8.jpg"],
+
+
+         [  "../images/dog/dog1.jpg", 
+            "../images/dog/dog2.jpg", 
+            "../images/dog/dog3.jpg", 
+            "../images/dog/dog4.jpg", 
+            "../images/dog/dog5.jpg", 
+            "../images/dog/dog6.jpg", 
+            "../images/dog/dog7.jpg", 
+            "../images/dog/dog8.jpg"],
+
+
+         [  "../images/cat/cat1.jpg", 
+            "../images/cat/cat2.jpg", 
+            "../images/cat/cat3.jpg", 
+            "../images/cat/cat4.jpg", 
+            "../images/cat/cat5.jpg", 
+            "../images/cat/cat6.jpg", 
+            "../images/cat/cat7.jpg", 
+            "../images/cat/cat8.jpg"],
+
+
+         [  "../images/mountain/mountain1.jpg", 
+            "../images/mountain/mountain2.jpg", 
+            "../images/mountain/mountain3.jpg", 
+            "../images/mountain/mountain4.jpg", 
+            "../images/mountain/mountain5.jpg", 
+            "../images/mountain/mountain6.jpg", 
+            "../images/mountain/mountain7.jpg", 
+            "../images/mountain/mountain8.jpg"],
+            
+
+         [  "../images/beach/beach1.jpg", 
+            "../images/beach/beach2.jpg", 
+            "../images/beach/beach3.jpg", 
+            "../images/beach/beach4.jpg", 
+            "../images/beach/beach5.jpg", 
+            "../images/beach/beach6.jpg", 
+            "../images/beach/beach7.jpg", 
+            "../images/beach/beach8.jpg"]
+
+    ]
+}

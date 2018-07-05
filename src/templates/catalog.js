@@ -1,6 +1,6 @@
-function catalogTemplate(){
+function catalogTemplate(title){
 	var html = `
-				<h1 class="categoryName">Winter</h1>			
+				<h1 class="categoryName">${title}</h1>			
 
 				<div id="catalogHolder" class="catalogHolder group" >
 					<div id="catalog"  class="catalog">

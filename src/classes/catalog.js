@@ -1,17 +1,17 @@
 class Catalog{
   
-  constructor(galery){
+  constructor(galery, title){
     this.galery = galery;
     this.leftdiff = 1;
     this.elem = null;
     this.currentPicture = null;
-    
+    this.title = title;
   }
 
 
   loadCatalog(){	 
     let content = document.getElementsByClassName("content")[0];
-    content.innerHTML = catalogTemplate();    
+    content.innerHTML = catalogTemplate(this.title);    
     this.elem = document.getElementById("catalog");
     
     this.displayCatalog();

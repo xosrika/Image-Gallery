@@ -1,0 +1,14 @@
+{
+    "categories":[
+
+        {"title": "Winter Pictures",  "image": "images/winter.jpg", "id": "0"},
+        {"title": "Spring Pictures",  "image": "images/spring.jpg", "id": "1"},
+        {"title": "Summer Pictures",  "image": "images/summer.jpg", "id": "2"},
+        {"title": "Autumn Pictures",  "image": "images/autumn.jpg", "id": "3"},
+        {"title": "Dog Pictures",     "image": "images/dog.jpg", "id": "4"},
+        {"title": "Cat Pictures",     "image": "images/cat.jpg", "id": "5"},
+        {"title": "Mountain Pictures","image": "images/mountain.jpg", "id": "6"},
+        {"title": "Beach Pictures",   "image": "images/beach.jpg", "id": "7"}
+
+    ]
+}
