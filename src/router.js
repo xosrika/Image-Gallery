@@ -48,7 +48,21 @@ router
       let elem = document.getElementsByClassName("content")[0];
       currentCatalog.currentPicture = parseInt(params.id);
 	    elem.innerHTML = imageTemplate(params.category, params.source);    
-    },    
+    },
+    
+    'liked': function () {
+     
+      let elem = document.getElementsByClassName("content")[0];
+      elem.innerHTML = homePageTemplate();    
+    },
+
+    'disliked': function () {
+     
+      let elem = document.getElementsByClassName("content")[0];
+      elem.innerHTML = homePageTemplate();    
+    },
+
+
    
   })
   .resolve();

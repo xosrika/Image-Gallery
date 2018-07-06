@@ -16,13 +16,22 @@
   </head>
   <body>
 		
-	<dev class="navbar">
-		<ul>
-			<li><a class="leftBar" href="#home">Home Page</a></li>
-			<li><a class="leftBar" href="#categories">Categories</a></li>
-			<li><a class="rightBar" id="logInShower">Log In</a></li>
-			<li><a class="rightBar" id="signUpShower">Sign Up</a></li>
-			<li><a class="rightBar logout" id="logout">Log Out</a></li>
+	<dev class="navbar group">
+		<ul class="group">
+			<li> <img id="logo" src="images/logo.png"> </li>
+			<li ><a class="leftBar" href="#home">Home Page</a></li>
+			<li ><a class="leftBar" href="#categories">Categories</a></li>
+			<li class="dropdown group leftBar">
+				<a class="dropbtn">Most Votes</a>
+				<div class="dropdown-content">
+					<a href="#liked">Most Liked</a>
+					<a href="#disliked">Most Disliked</a>
+					
+				</div>
+			</li>
+			<li ><a class="rightBar" id="logInShower">Log In</a></li>
+			<li ><a class="rightBar" id="signUpShower">Sign Up</a></li>
+			<li ><a class="rightBar logout" id="logout">Log Out</a></li>
 		</ul>
 	</dev>
 	
