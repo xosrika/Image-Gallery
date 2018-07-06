@@ -1,5 +1,5 @@
 function categoriesPageTemplate(){
-	var html = `
+	let html = `
 					<div class="column side">
 						<h2>Side</h2>
 						<p></p>

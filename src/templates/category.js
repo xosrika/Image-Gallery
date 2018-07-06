@@ -1,5 +1,5 @@
 function categoryTemplate(data){
-	var html = `
+	let html = `
 					<div class="gallery">
 						<a href="#categories/${data.id}/">
 							<img src=${data.image} alt="Mountains">

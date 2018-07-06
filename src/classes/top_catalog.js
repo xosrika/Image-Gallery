@@ -31,9 +31,7 @@ class TopCatalog{
     
     for(let i=0; i<len; i++){
       let style = `left:${(i+i*33)}%; background-image: url(\'${this.imageList[i][0]}\');`;
-      console.log(this.imageList[i][0]);
-      console.log(this.imageList[i][1]);
-      console.log(this.attitude);
+      
       this.elem.innerHTML += this.getImageDiv(style, this.imageList[i], i);
     } 
   }
@@ -154,7 +152,6 @@ function getTopImages(attitude , callback){
                 }else{
                   title = "Mosted Liked Pictures";
                 }
-                console.log(sorted);
                 currentTopCatalog = new TopCatalog(sorted, title, attitude);
 
                 if (typeof callback == 'function') {
@@ -173,7 +170,7 @@ function getTopImages(attitude , callback){
 
 function returnSortedDict(dict){
   // Create items array
-  var items = Object.keys(dict).map(function(key) {
+  let items = Object.keys(dict).map(function(key) {
     return [key, dict[key]];
   });
 

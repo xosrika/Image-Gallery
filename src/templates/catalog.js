@@ -1,5 +1,5 @@
 function catalogTemplate(title){
-	var html = `
+	let html = `
 				<h1 class="categoryName">${title}</h1>			
 
 				<div id="catalogHolder" class="catalogHolder group" >

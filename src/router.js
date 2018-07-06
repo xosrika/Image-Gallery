@@ -58,6 +58,14 @@ router
 
       elem.innerHTML = topImageTemplate(src, params.votes, params.attitude);    
     },
+
+    'disliked': function () {
+      
+      getTopImages(false,  function(){
+     
+        currentTopCatalog.loadCatalog();
+      })
+    },
     
     'liked': function () {
      
@@ -67,13 +75,7 @@ router
       })
     },
 
-    'disliked': function () {
-     
-      getTopImages(false,  function(){
-     
-        currentTopCatalog.loadCatalog();
-      })
-    },
+    
 
 
    
