@@ -105,12 +105,12 @@ class TopCatalog{
       let src = this.imageList[this.currentPicture][0];
       let id = this.currentPicture;
       let votes = this.imageList[this.currentPicture][1];
-      window.location.href = `http://localhost/Image-Gallery/index.php#top/${this.attitude}/${src}/${id}/${votes}`;
+      window.location.href = `${root}#top/${this.attitude}/${src}/${id}/${votes}`;
     }else{
       if(this.attitude){
-        window.location.href = "http://localhost/Image-Gallery/index.php#liked";  
+        window.location.href = `${root}#liked`;  
       } else {
-        window.location.href = "http://localhost/Image-Gallery/index.php#disliked";
+        window.location.href = `${root}#disliked`;
       }
     }
   } 

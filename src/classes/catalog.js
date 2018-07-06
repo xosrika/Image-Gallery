@@ -97,9 +97,9 @@ class Catalog{
   goToNextImagePage(){
     this.currentPicture++;
     if(this.currentPicture != this.galery.getGalleryImages().length)
-      window.location.href = `http://localhost/Image-Gallery/index.php#image/${this.galery.getGalleryImages()[this.currentPicture]}/${this.currentPicture}>`;
+      window.location.href = `${root}#image/${this.galery.getGalleryImages()[this.currentPicture]}/${this.currentPicture}>`;
     else
-      window.location.href = "http://localhost/Image-Gallery/index.php#categories";  
+      window.location.href = `${root}#categories`;  
   } 
 
 }

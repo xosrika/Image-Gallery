@@ -1,10 +1,12 @@
 // window.addEventListener("hashchange", funcRef, false);
 
 
-var root = "http://localhost/Image-Gallery/index.php";
-var useHash = false; // Defaults to: false
-var hash = '#'; // Defaults to: '#'
-var router = new Navigo(null, false);
+let root = "http://localhost/Image-Gallery/index.html";
+let useHash = false; // Defaults to: false
+let hash = '#'; // Defaults to: '#'
+let router = new Navigo(null, false);
+
+
 
 router
   .on({
