@@ -1,8 +1,7 @@
 function topImageTemplate(src, votes, attitude){
-	let img = `images/${category}/${name}`;
 	
 	let title = "";
-	if(attitude){
+	if(attitude == "true"){
 		title = `This Picture Has Got ${votes} Likes`;
 	} else{
 		title = `This Picture Has Got ${votes} Dislikes`;
@@ -18,9 +17,9 @@ function topImageTemplate(src, votes, attitude){
 
 							
 				`;
-	if(currentUser != null && currentUser.hasVoted(img)){
+	if(currentUser != null && currentUser.hasVoted(src)){
 		let voteText = "You have already liked this picture";
-		if(currentUser.getVote(img) == -1){
+		if(currentUser.getVote(src) == -1){
 			voteText = "You have already disliked this picture";
 		}
 
@@ -29,7 +28,7 @@ function topImageTemplate(src, votes, attitude){
 				<h3 id="voteText">${voteText}</h3>	
 				<div id="actions">
 					<div class="center">
-						<img id="nextImage" class="action_buttons" src="images/next.png">
+						<img id="topNextImage" class="action_buttons" src="images/next.png">
 					</div>
 				</div>
 
@@ -39,13 +38,13 @@ function topImageTemplate(src, votes, attitude){
 		html += `
 				<div id="actions">
 					<div class="left">
-						<img id="likeImage" class="action_buttons" src="images/accept.png">
+						<img id="topLikeImage" class="action_buttons" src="images/accept.png">
 					</div>
 					<div class="right">
-						<img id="dislikeImage" class="action_buttons" src="images/reject.png">
+						<img id="topDislikeImage" class="action_buttons" src="images/reject.png">
 					</div>
 					<div class="center">
-						<img id="nextImage" class="action_buttons" src="images/next.png">
+						<img id="topNextImage" class="action_buttons" src="images/next.png">
 					</div>
 				</div>
 

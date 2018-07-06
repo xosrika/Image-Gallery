@@ -49,17 +49,30 @@ router
       currentCatalog.currentPicture = parseInt(params.id);
 	    elem.innerHTML = imageTemplate(params.category, params.source);    
     },
+
+    'top/:attitude/images/:cat/:src/:id/:votes' : function (params){
+      let elem = document.getElementsByClassName("content")[0];
+      currentTopCatalog.currentPicture = parseInt(params.id);
+
+      let src = `images/${params.cat}/${params.src}`;
+
+      elem.innerHTML = topImageTemplate(src, params.votes, params.attitude);    
+    },
     
     'liked': function () {
      
-      let elem = document.getElementsByClassName("content")[0];
-      elem.innerHTML = homePageTemplate();    
+      getTopImages(true,  function(){
+     
+        currentTopCatalog.loadCatalog();
+      })
     },
 
     'disliked': function () {
      
-      let elem = document.getElementsByClassName("content")[0];
-      elem.innerHTML = homePageTemplate();    
+      getTopImages(false,  function(){
+     
+        currentTopCatalog.loadCatalog();
+      })
     },
 
 

@@ -110,12 +110,15 @@
 	<script src="https://unpkg.com/navigo@6.0.2/lib/navigo.min.js"></script>
 	<script src="src/data/catalog_images.js"></script>
 
+	 
 	<script src="src/templates/categories.js"></script>
+	<script src="src/templates/top_image.js"></script> 
 	<script src="src/templates/category.js"></script>
 	<script src="src/templates/catalog.js"></script>
 	<script src="src/templates/image.js"></script>  
 	<script src="src/templates/home.js"></script>
 
+	<script src="src/classes/TOP_catalog.js"></script>
 	<script src="src/classes/catalog.js"></script>
 	<script src="src/classes/gallery.js"></script>
 	<script src="src/classes/user.js"></script>

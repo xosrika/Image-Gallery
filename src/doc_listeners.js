@@ -83,6 +83,15 @@ document.addEventListener("click", function(event){
     currentCatalog.moveCatalogRight();
   }
 
+  if(targetId == "btnTopLeft"){  
+    currentTopCatalog.moveCatalogLeft();
+  }
+
+  if(targetId == "btnTopRight"){
+    currentTopCatalog.moveCatalogRight();
+  }
+
+
 
   if(targetId == "nextImage"){
     currentCatalog.goToNextImagePage();
@@ -116,73 +125,40 @@ document.addEventListener("click", function(event){
 
   }
 
+  if(targetId == "topNextImage"){
+    currentTopCatalog.goToNextImagePage();
+  }
+
+  if(targetId == "topDislikeImage"){
+    if(currentUser == null){
+      document.getElementById('signupform').style.display='none';
+      document.getElementById('loginform').style.display='block';
+      document.getElementById("logintext").innerHTML = "<b></b>";
+    } else{
+
+      let bla = (document.getElementById("mainPicture"));
+      let image = (bla.src).substring(31);
+      currentUser.addVote(image, -1);
+      currentTopCatalog.goToNextImagePage();
+    }
+  }
+
+  if(targetId == "topLikeImage"){
+    if(currentUser == null){
+      document.getElementById('signupform').style.display='none';
+      document.getElementById('loginform').style.display='block';
+      document.getElementById("logintext").innerHTML = "<b></b>";
+    } else{
+      let bla = (document.getElementById("mainPicture"));
+      let image = (bla.src).substring(31);
+      currentUser.addVote(image, 1);
+      currentTopCatalog.goToNextImagePage();
+    }
+
+  }
+
   
 });
-
-
-
-
-function mostedLikedImages(callback){
-  fetch('data/votes.json')
-      .then(
-        function(response0) {
-            response0
-              .json()
-              .then(function(response) {
-                let dicLike = {}
-
-                let dicNotLike = {}
-
-                response.votes.forEach(function(item){
-                  
-                  if(item.vote == "1"){  
-                    if (dicLike[item.image] !== undefined)               
-                      dicLike[item.image] ++;
-                    else 
-                      dicLike[item.image] = 1  
-                  } else{
-                    if (dicNotLike[item.image] !== undefined)               
-                      dicNotLike[item.image] ++;
-                    else 
-                      dicNotLike[item.image] = 1  
-                    
-                  }
-                  
-                })
-
-                itemsLiked = returnSortedDict(dicLike);
-                itemsNotLiked = returnSortedDict(dicNotLike);
-
-                if (typeof callback == 'function') {
-                  callback.call(null);
-                }
-
-              });
-        }
-      )
-      .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-      });
-
-      
-}
-
-function returnSortedDict(dict){
-  // Create items array
-  var items = Object.keys(dict).map(function(key) {
-    return [key, dict[key]];
-  });
-
-  // Sort the array based on the second element
-  items.sort(function(first, second) {
-    return second[1] - first[1];
-  });
-
-  return items;
-}
-
-let itemsLiked;
-let itemsNotLiked;
 
 
 
