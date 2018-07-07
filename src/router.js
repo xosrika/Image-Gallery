@@ -85,7 +85,9 @@ router
   .resolve();
 
   router.notFound(function () {
-    console.log("Not found");
+    
+    let elem = document.getElementsByClassName("content")[0];
+    elem.innerHTML = errorPageTemplate(`Page path: ${window.location.href} was not found by router.`); 
   });
 
 
@@ -109,7 +111,9 @@ router
           }
         )
         .catch(function(err) {
-          console.log('Fetch Error :-S', err);
+          console.log("Fetch Error :-S");
+          // let elem = document.getElementsByClassName("content")[0];
+          // elem.innerHTML = errorPageTemplate(`Fetch Error :-S, ${err}`); 
         });
   }
 

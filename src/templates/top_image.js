@@ -2,10 +2,14 @@ function topImageTemplate(src, votes, attitude){
 	
 	let title = "";
 	if(attitude == "true"){
-		title = `This Picture Has Got ${votes} Likes`;
+		title = `This Picture Has Got ${votes} Like`;
+		
 	} else{
-		title = `This Picture Has Got ${votes} Dislikes`;
+		title = `This Picture Has Got ${votes} Dislike`;		
 	}
+
+	if(parseInt(votes) > 1)
+		title += 's';
 
 	let html = `
 					<h1 class="categoryNameForSingleImage">${title}</h1>			

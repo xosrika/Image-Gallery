@@ -1,8 +1,7 @@
 function homePageTemplate(){
 	let html = `
 					<div class="column side">
-						<h2>Side</h2>
-						<p></p>
+						
 					</div>
 					<div class="column middle">
 						<h1>Home Page</h1>
@@ -12,8 +11,7 @@ function homePageTemplate(){
 						</p>
 					</div>
 					<div class="column side">
-						<h2>Side</h2>
-						<p></p>
+						
 					</div>
 				`;	 
 

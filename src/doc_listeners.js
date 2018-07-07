@@ -20,6 +20,9 @@ document.addEventListener("click", function(event){
           document.getElementById("signuptext").innerHTML = "<b>This user exists!</b>";
         }else{
           document.getElementById('signupform').style.display='none';
+          document.getElementById("signupUsr").value = "";
+          document.getElementById("signupPsw").value = "";
+          document.getElementById("signupRepPsw").value = "";
           changeNavbar(true);
         } 
       });
@@ -53,6 +56,8 @@ document.addEventListener("click", function(event){
         document.getElementById("logintext").innerHTML = "<b>Wrong username or password!</b>";
       }else{
         document.getElementById('loginform').style.display='none';
+        document.getElementById("loginUsr").value = "";
+        document.getElementById("loginPsw").value = "";
         changeNavbar(true);
       }
 
