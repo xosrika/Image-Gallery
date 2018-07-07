@@ -21,8 +21,15 @@
         {"image": "images/winter/winter8.jpg", "user": "da", "vote": -1},
         {"image": "images/winter/winter6.jpg", "user": "shevavseb", "vote": -1},
         {"image": "images/winter/winter8.jpg", "user": "male", "vote": -1},
-        {"image": "images/winter/winter8.jpg", "user": "egaa", "vote": -1}
-
+        {"image": "images/spring/spring1.jpg", "user": "egaa", "vote": -1},
+        {"image": "images/spring/spring2.jpg", "user": "egaa", "vote": -1},
+        {"image": "images/spring/spring3.jpg", "user": "egaa", "vote": -1},
+        {"image": "images/spring/spring2.jpg", "user": "egaa", "vote": -1},
+        {"image": "images/summer/summer8.jpg", "user": "egaa", "vote": -1},
+        {"image": "images/dog/dog2.jpg", "user": "egaa", "vote": -1},
+        {"image": "images/dog/dog8.jpg", "user": "egaa", "vote": 1},
+        {"image": "images/dog/dog8.jpg", "user": "egaa", "vote": 1},
+        {"image": "images/dog/dog8.jpg", "user": "egaa", "vote": 1}
 
     ]
 }
